@@ -1,0 +1,8 @@
+C:\Users\ener-\source\repos\ETrade\ETrade.Client\bin\Debug\netcoreapp3.1\ETrade.Client.deps.json
+C:\Users\ener-\source\repos\ETrade\ETrade.Client\bin\Debug\netcoreapp3.1\ETrade.Client.dll
+C:\Users\ener-\source\repos\ETrade\ETrade.Client\obj\Debug\netcoreapp3.1\ETrade.Client.csprojAssemblyReference.cache
+C:\Users\ener-\source\repos\ETrade\ETrade.Client\obj\Debug\netcoreapp3.1\ETrade.Client.AssemblyInfoInputs.cache
+C:\Users\ener-\source\repos\ETrade\ETrade.Client\obj\Debug\netcoreapp3.1\ETrade.Client.AssemblyInfo.cs
+C:\Users\ener-\source\repos\ETrade\ETrade.Client\bin\Debug\netcoreapp3.1\ETrade.Client.pdb
+C:\Users\ener-\source\repos\ETrade\ETrade.Client\obj\Debug\netcoreapp3.1\ETrade.Client.dll
+C:\Users\ener-\source\repos\ETrade\ETrade.Client\obj\Debug\netcoreapp3.1\ETrade.Client.pdb
