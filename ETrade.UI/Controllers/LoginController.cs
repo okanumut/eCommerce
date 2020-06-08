@@ -22,7 +22,7 @@ namespace ETrade.UI.Controllers
 
 
         //Register
-        public IActionResult Login(string UserName,string Password,string Email)
+        public IActionResult Login(string UserName,string Password,string Email,string UserType)
         {
             try
             {
@@ -30,7 +30,8 @@ namespace ETrade.UI.Controllers
                 {
                     UserName = UserName,
                     Email = Email,
-                    Password = Password
+                    Password = Password,
+                    UserType = UserType,
                 };
 
                 _unitOfWork.LoginUsers.Insert(_user);
@@ -59,6 +60,7 @@ namespace ETrade.UI.Controllers
                 if (UserSuccess != null)
                 {
                     Settings.cache.Set("UserName", UserSuccess.UserName);
+                    Settings.cache.Set("UserType", UserSuccess.UserType);
 
                     var status = new { operation = "Success" };
 
@@ -73,16 +75,14 @@ namespace ETrade.UI.Controllers
 
                 
             }
-            catch (Exception)
+            catch (Exception e )
             {
+                var asd = e;
                 var status = new { operation = "Catch" };
 
                 return Content(JsonConvert.SerializeObject(status), "application/json");
             }
 
-
-
-            
 
 
         }

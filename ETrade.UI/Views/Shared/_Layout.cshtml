@@ -26,8 +26,31 @@
     <!-- Index Code  -->
     <script type="text/javascript" src="~/template/js/jquery/jquery.nivo.slider.pack.js"></script>
 
+    <style>
+        .cool-button {
+            background-color: #2ecc71;
+            padding: 20px;
+            font-size: 12px;
+            color: white;
+            font-family: "Verdana";
+            border: none;
+            border-radius: 10px;
+            border-bottom: 5px solid #27ae60;
+            -webkit-transition: background-color 0.1s;
+        }
 
+            .cool-button:hover {
+                background-color: #51D88C;
+            }
 
+            .cool-button:focus {
+                outline: none;
+            }
+
+            .cool-button:active {
+                background-color: #01CD5A;
+            }
+    </style>
 
 </head>
 <body>
@@ -39,19 +62,6 @@
         <br />
         <br />
         <br />
-        <div id="logo"> <a href="index.html" class="logolink"></a></div>
-        <div id="logotext">Premium HTML <b> E-commerce Theme</b></div>
-        <!-- END  logo and slogan -->
-        <!-- BEGIN  account links and cart  -->
-        <div id="headeright">
-            <div class="header_right_align">
-                <div class="bluetext"><a href="login-register-page.html">6 items</a></div>
-                <div class="headerbar"></div>
-                <div class="headerightext">$3000.00</div>
-                <a href="cart-page.html" class="cart"></a>
-            </div>
-        </div>
-        <!-- END  account links and cart  -->
 
 
 
@@ -61,156 +71,51 @@
             <div class="mainbar">
                 <div class="mainbar_content">
                     <img class="loginlogo_s" src="~/template/styles/Images/loginlogo_s.png" alt="loginlogo" />
-                    <div class="login"><a href="login">Login</a></div>
-                    <div class="createbar"></div>
-                    <img class="create_s" src="~/template/styles/Images/create_s.png" alt="creates" />
-                    <div class="create"><a href="login-register-page.html">Create an account</a></div>
+                    <div class="login"><a href="login">Kaydol veya Giriş Yap</a></div>
                 </div>
             </div>
         }
         else
         {
             <div class="mainbar">
-                <div class="mainbar_content"> 
-                    <div class="create">@Settings.cache.Get("UserName");</div>
+                <div class="mainbar_content">
+                    @if (Settings.cache.Get("UserType").ToString() == "2")
+                    {
+                        <button class="cool-button">@Settings.cache.Get("UserName")</button>
+                        <a href="/" id="SignOut" onclick="SignOnut()" class="btn-danger">Çıkıp Yap</a>
+                        <a href="basket" id="basket" class="btn-outline-secondary">Sepetim</a>
+
+                    }
+                    else
+                    {
+                        <button class="cool-button">@Settings.cache.Get("UserName")</button>
+                        <button class="cool-button" onclick="location.href='add-product'">Ürün Ekle</button>
+                        <a href="/" id="SignOut" onclick="SignOnut()" class="btn-danger">Çıkıp Yap</a>
+                        <a href="basket" id="basket" class="btn-outline-secondary">Sepetim</a>
+                    }
+
                 </div>
             </div>
-            
+
         }
-        <!-- BEGIN  header menu  -->
-        <div id="categories" class="s_nav">
-            <ul>
-                <li>
-                    <a href="category-page.html">Accessories</a>
-                    <ul class="s_submenu">
-                        <li class="left"><a href="category-page.html">Desktop</a></li>
-                        <li class="middle"><a href="category-page.html">Desktop</a></li>
-                        <li class="right"><a href="category-page.html">Desktop</a></li>
-                        <li class="left"><a href="category-page.html">Laptops</a></li>
-                        <li class="middle"><a href="category-page.html">Laptops</a></li>
-                        <li class="right"><a href="category-page.html">Laptops</a></li>
-                        <li class="left"><a href="category-page.html">Monitors</a></li>
-                        <li class="middle"><a href="category-page.html">Monitors</a></li>
-                        <li class="right"><a href="category-page.html">Monitors</a></li>
-                        <li class="left"><a href="category-page.html">Laptops</a></li>
-                        <li class="middle"><a href="category-page.html">Laptops</a></li>
-                        <li class="right"><a href="category-page.html">Laptops</a></li>
-                        <li class="left"><a href="category-page.html">Monitors</a></li>
-                        <li class="middle"><a href="category-page.html">Monitors</a></li>
-                        <li class="right"><a href="category-page.html">Monitors</a></li>
-                    </ul>
-                </li>
-                <li> <a href="category-page.html">Software</a></li>
-                <li>
-                    <a href="category-page.html">Monitors</a>
-                    <ul class="s_submenu">
-                        <li class="left"><a href="category-page.html">Desktop</a></li>
-                        <li class="middle"><a href="category-page.html">Desktop</a></li>
-                        <li class="right"><a href="category-page.html">Desktop</a></li>
-                        <li class="left"><a href="category-page.html">Laptops</a></li>
-                        <li class="middle"><a href="category-page.html">Laptops</a></li>
-                        <li class="right"><a href="category-page.html">Laptops</a></li>
-                        <li class="left"><a href="category-page.html">Monitors</a></li>
-                        <li class="middle"><a href="category-page.html">Monitors</a></li>
-                        <li class="right"><a href="category-page.html">Monitors</a></li>
-                        <li class="left"><a href="category-page.html">Laptops</a></li>
-                        <li class="middle"><a href="category-page.html">Laptops</a></li>
-                        <li class="right"><a href="category-page.html">Laptops</a></li>
-                        <li class="left"><a href="category-page.html">Monitors</a></li>
-                        <li class="middle"><a href="category-page.html">Monitors</a></li>
-                        <li class="right"><a href="category-page.html">Monitors</a></li>
-                    </ul>
-                </li>
-                <li> <a href="category-page.html">Cases</a></li>
-                <li>
-                    <a href="category-page.html">Speakers</a>
-                    <ul class="s_submenu">
-                        <li class="left"><a href="category-page.html">Desktop</a></li>
-                        <li class="middle"><a href="category-page.html">Desktop</a></li>
-                        <li class="right"><a href="category-page.html">Desktop</a></li>
-                        <li class="left"><a href="category-page.html">Laptops</a></li>
-                        <li class="middle"><a href="category-page.html">Laptops</a></li>
-                        <li class="right"><a href="category-page.html">Laptops</a></li>
-                        <li class="left"><a href="category-page.html">Monitors</a></li>
-                        <li class="middle"><a href="category-page.html">Monitors</a></li>
-                        <li class="right"><a href="category-page.html">Monitors</a></li>
-                        <li class="left"><a href="category-page.html">Laptops</a></li>
-                        <li class="middle"><a href="category-page.html">Laptops</a></li>
-                        <li class="right"><a href="category-page.html">Laptops</a></li>
-                        <li class="left"><a href="category-page.html">Monitors</a></li>
-                        <li class="middle"><a href="category-page.html">Monitors</a></li>
-                        <li class="right"><a href="category-page.html">Monitors</a></li>
-                    </ul>
-                </li>
-            </ul>
-            <div class="searchli">
-                <form method="post" action="#">
-                    <div class="button"></div>
-                    <input type="text" size="10" maxlength="40" class="keyword" value="Keywords..."
-                           onfocus="if(this.value=='Keywords...')this.value=''"
-                           onblur="if(this.value=='')this.value='Keywords...'" />
-                </form>
-            </div>
-        </div>
-        <!-- END  header menu -->
+
         <!-- END  .header -->
 
         <div class="menu_block">
-
+              
             <!-- BEGIN categories menu -->
-            <div class="hc" id="cat_menu_button"><a href="#">Categories</a></div>
+            <div class="hc" id="cat_menu_button"><a href="#">Kategoriler</a></div>
+
+
             <ul id="category_menu">
-                <li><a href="category-page.html">Accessories</a></li>
-                <li>
-                    <a href="category-page.html">Add-On Card<span class="submenu_icon"></span></a>
-                    <ul class="sub-menu">
-                        <li><a href="#"><span><span>Fusce luctus</span></span></a></li>
-                        <li><a href="#"><span><span>Aliquam pharetra</span></span></a></li>
-                        <li><a href="#"><span><span>Nunc porttitor</span></span></a></li>
-                        <li><a href="#"><span><span>Etiam sagittis</span></span></a></li>
-                        <li><a href="#"><span><span>Duis porta</span></span></a></li>
-                    </ul>
-                </li>
-                <li><a href="category-page.html"><span><span>Barebone System</span></span></a></li>
-                <li><a href="category-page.html"><span><span>Blank DVD Media</span></span></a></li>
-                <li><a href="category-page.html"><span><span>Cable/Adapters</span></span></a></li>
-                <li><a href="category-page.html"><span><span>Barebone System</span></span></a></li>
-                <li><a href="category-page.html"><span><span>Blank DVD Media</span></span></a></li>
-                <li><a href="category-page.html"><span><span>Cable/Adapters</span></span></a></li>
-                <li><a href="category-page.html"><span><span>Barebone System</span></span></a></li>
-                <li><a href="category-page.html"><span><span>Blank DVD Media</span></span></a></li>
-                <li><a href="category-page.html"><span><span>Cable/Adapters</span></span></a></li>
-                <li><a href="category-page.html"><span><span>Accessories</span></span></a></li>
+
+                <li><a href="category-page.html"><span><span>Korku</span></span></a></li>
+                <li><a href="category-page.html"><span><span>Macera</span></span></a></li>
+                <li><a href="category-page.html"><span><span>Gizem</span></span></a></li>
+                <li><a href="category-page.html"><span><span>Bilim-Kurgu</span></span></a></li>
             </ul>
 
             <!-- END categories menu -->
-            <!--BEGIN newletter form -->
-            <div class="newsletterbutton  hc">
-                <div class="square"></div>
-                <a href="#">Newsletter</a>
-            </div>
-            <div class="nwsl_box">
-                <div id="nwsl_text">
-                    <div class="newslettertext">Sign up for our weekly newsletter and stay<a href="#">up-to-date</a>with  the latest offers, and newest.</div>
-                </div>
-                <div class="nws_form">
-                    <form method="post" action="http://www.fruitblu.com/Basico3/Demo/Default/index.html">
-                        <input type="text" class="email" value="E-m@il address"
-                               onfocus="if(this.value=='E-m@il address')this.value=''"
-                               onblur="if(this.value=='')this.value='E-m@il address'" />
-                        <br />
-                        <input type="submit" class="subscribe" value="Subscribe" />
-                    </form>
-                </div>
-            </div>
-            <div class="nwsl_border"></div>
-            <!--END newletter form -->
-            <!--BEGIN payments icons -->
-            <div class="payments">
-                <div id="paypal"></div>
-                <div id="visa"></div>
-                <div id="mastercard"></div>
-            </div>
             <!--END newletter form -->
             <!-- END left side menus -->
         </div>
@@ -228,61 +133,48 @@
 
 
     <div id="footer">
-        <div class="horizontal_bar" style="margin:0;"></div>
-        <div class="footer_sbox">
-            <div class="footer_time">
-                <img src="~/template/styles/Images/timeicon.png" class="timeicon" alt="time" />
-                <div class="hc footer-title">Timelaspum</div>
-                <div style="clear:both; margin:0; padding:0;"></div>
-                <div class="boxcontainer">
-                    <img src="~/template/styles/Images/Product_photos/footer_thumb.jpg" class="footer_thumb_left" alt="footerthumb" />
-                    <div class="footer_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consequat <b>erat sed</b> augue vehicula ullamcorper. Suspendisse massa turpis, blandit sed rutrum non, condimentum ac nisl. </div>
-                </div>
-            </div>
-            <div class="footer_twitter">
-                <img src="~/template/styles/Images/twittericon.jpg" class="timeicon" alt="twittericon" />
-                <div class="hc footer-title">Twitter</div>
-                <div style="clear:both;"></div>
-                <div class="boxcontainer">
-                    <ul id="twitter_update_list">
-                        <li></li>
-                    </ul>
-                    <!-- Twitter Box Code  -->
-                    <script type="text/javascript" src="~/template/js/social_js/twitter.js"></script>
-                </div>
-                <!-- End Twitter Box Code  -->
-            </div>
-            <div class="footer_facebook">
-                <img src="~/template/styles/Images/facebookicon.jpg" class="timeicon" alt="facebookicon" />
-                <div class="hc footer-title">Facebook</div>
-                <div style="clear:both;"></div>
-                <div class="boxcontainer">
-                    <!-- Facebook Box Code  -->
-                    <script type="text/javascript" src="~/template/js/social_js/fblike.js"></script>
-                    <!-- End Facebook Box Code  -->
-                </div>
-            </div>
-        </div>
+
+
         <div style="clear:both;"></div>
         <div class="horizontal_bar" style="margin:0; padding:14px 0 1px 0;"></div>
 
         <!-- BEGIN  copyright  -->
-        <div class="copyright">© 2011 <b>Basico</b> - Premium HTML E-commerce Theme</div>
+        <div class="copyright" style=" position: fixed;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 50px;
+    padding:15px;
+    background-color: #000;">© 2011 <b>Basico</b> - Premium HTML E-commerce Theme</div>
 
-        <!-- END  copyright  --> <!-- BEGIN  #footer_menu  -->
-        <ul id="footer_menu">
-            <li><a href="index.html">Home</a> <span class="footer_lilbar"></span></li>
-            <li><a href="login-register-page.html">Create an Account</a><span class="footer_lilbar"></span></li>
-            <li><a href="#">Feed RSS</a><span class="footer_lilbar"></span></li>
-            <li><a href="#">Sitemap</a><span class="footer_lilbar"></span></li>
-            <li><a href="contact-page.html">Contact Us</a></li>
-            <!-- END  #footer_menu  -->
-        </ul>
 
-        <!-- Credits  -->
-        <div id="credits">Credits by <a href="#">Aldema Studio</a> &#38; <a href="#"> Just 8D </a></div>
 
         <!-- END  #footer -->
     </div>
+
+
+    <script src="~/js/Util/Ajax.js"></script>
+
+    <script>
+        $("#SignOut").click(function () {
+            var id = $(this).attr('data-id');
+
+            var data = {
+                "SignOut": true,
+            };
+
+            Util.Ajax.Generic("exit", data, "POST", "json", false, null, success, null, null);
+
+
+            function success(status) {
+                if (status.operation == "Success") {
+                    window.location.href = "anasayfa";
+                } else if (status.operation == "Wrong") {
+                    // $("#span").append("Hatalı Giriş");
+                }
+            }
+
+        });
+    </script>
 </body>
 </html>

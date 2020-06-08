@@ -21,5 +21,6 @@ namespace ETrade.Entity.Concrete
         public string Email { get; set; }
         [StringLength(250)]
         public string Password { get; set; }
+        public string UserType { get; set; }
     }
 }

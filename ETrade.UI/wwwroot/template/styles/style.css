@@ -1,4 +1,4 @@
-@charset "utf-8";/*
+﻿@charset "utf-8";/*
 Theme Name: Basico
 Description: Premium HTML E-commerce Theme
 Author: Aldema Studio & Just 8D
@@ -36,7 +36,7 @@ body {
 .mainbar {
 	position:absolute;
 	font-family:Arial, Helvetica, sans-serif;
-	height:36px;
+	height:60px;
 	background:url(Images/mainbarbg.png) repeat;
 	width:100%;
 	top:0px;

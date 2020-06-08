@@ -10,6 +10,8 @@ namespace ETrade.Repository.UnitOfWork
         object Entity<T>();
 
         ILoginUsers LoginUsers { get; } 
+        IProducts Products { get; } 
+        IBaskets Baskets { get; } 
 
         int Save();
     }

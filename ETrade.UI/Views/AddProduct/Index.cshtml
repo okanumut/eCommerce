@@ -1,0 +1,91 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <div id="central_content">
+
+        <!-- BEGIN central slogan and rss feed -->
+        <div class="question1 ha">Check Out</div>
+        <div class="question2 ha">Full Elements</div>
+        <div style="clear:both;"></div>
+        <div class="here">You are here:</div>
+        <div class="product_directory"><a href="#">Home</a></div>
+        <div class="product_directory arrows">»</div>
+        <div class="product_directory blue"><a href="#">Check out</a></div>
+
+        <!-- END central slogan and rss feed -->
+        <!-- START #central_content-->
+        <div style="clear:both;  padding:0 0 24px 0; margin:0; line-height:24px;"></div>
+
+        <form action="#">
+            <div class="form_left">
+                <div class="check_label">Ad :*</div>
+                <input type="text" class="check_input" name="bookName" id="bookName" />
+
+                <div class="check_label">Fiyat :*</div>
+                <input type="text" class="check_input" name="bookPrice" id="bookPrice" />
+
+
+
+            </div>
+            <div class="form_right">
+                <div class="check_label">Yazar :*</div>
+                <input type="text" class="check_input" name="bookAuthor" id="bookAuthor" />
+
+                <div class="check_label">Kategori :*</div>
+                <div>
+                    <select class="select2" title="Select one" id="selectCategory" style="font: 12px Arial, Helvetica, sans-serif;
+    width: 299px;
+    height: 34px;
+    line-height: 34px;
+    border: 1px solid #F0EEEE;
+    background-color: #FEFEFE;
+    font-size: 12px;
+    color: #666;
+    padding: 0 0 0 14px;
+    margin: 5px 0 17px 0;">
+                        <option value="">--- Kategori Seçiniz ---</option>
+                        <option value="Korku">Korku</option>
+                        <option value="Macera">Macera</option>
+                        <option value="Gizem">Gizem</option>
+                        <option value="Bilim-kurgu">Bilim-kurgu</option>
+                    </select>
+                </div>
+            </div>
+        </form> 
+
+        <div id="addProduct" class="checkout_button" style="margin-top:28px; margin-bottom:10px;"><a href="#"><img class="checkout_icon" src="~/template/styles/Images/check.png" alt="check" />Ürün Ekle</a></div>
+
+        <!-- END #central_content-->
+    </div>
+
+
+    <script src="~/js/Util/Ajax.js"></script>
+
+<script>
+    $("#addProduct").click(function () {
+
+        var data = {
+            "BookName": $("#bookName").val(),
+            "BookAuthor": $("#bookAuthor").val(),
+            "BookPrice": $("#bookPrice").val(),
+            "BookCategory": $("#selectCategory").val(),
+        };
+        //logg
+
+
+        Util.Ajax.Generic("product", data, "POST", "json", false, null, success, null, null);
+
+
+        function success(status) {
+            if (status.operation == "Success") {
+                window.location.href = "anasayfa";
+            } else if (status.operation == "Wrong") {
+               // $("#span").append("Hatalı Giriş");
+            }
+        }
+    });
+</script>
+

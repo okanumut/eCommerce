@@ -1,0 +1,27 @@
+﻿@model List<BasketModel>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    List<int> priceList = new List<int>();
+    var tempPrice = 0;
+
+}
+
+
+<h1>SEPETİM</h1>
+@foreach (var item in Model)
+{
+
+    <h5> Kitap Adı : @item.BookName     ->>>  Fiyatı:@item.BookPrice   </h5>
+
+    priceList.Add(Convert.ToInt32((@item.BookPrice)));
+}
+
+
+@foreach (var item2 in priceList)
+{
+    tempPrice += item2;
+}
+
+<h1>Toplam Fiyat = @tempPrice</h1>

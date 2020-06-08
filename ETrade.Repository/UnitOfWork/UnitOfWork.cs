@@ -12,6 +12,8 @@ namespace ETrade.Repository.UnitOfWork
     {
         private bool disposed = false;
         public ILoginUsers LoginUsers { get; } 
+        public IProducts Products { get; } 
+        public IBaskets Baskets { get; } 
         private readonly IMongoContext _mongoContext;
 
         public UnitOfWork()
@@ -20,6 +22,8 @@ namespace ETrade.Repository.UnitOfWork
             {
                 _mongoContext = new MongoContext();
                 LoginUsers = new LoginUsersMongoRepository(_mongoContext); 
+                Products = new ProductsMongoRepository(_mongoContext);
+                Baskets = new BasketsMongoRepository(_mongoContext); 
             }
             else
             {

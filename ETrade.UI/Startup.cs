@@ -70,11 +70,26 @@ namespace ETrade.UI
             app.UseAuthorization();
 
             app.UseMvc(routes =>
-            {  
+            {
+                routes.MapRoute("startPage", "", new { controller = "MainPage", action = "Index" });
+
                 routes.MapRoute("anasayfa", "anasayfa", new { controller = "Home", action = "Index" }); 
                 routes.MapRoute("login", "login", new { controller = "Login", action = "Index" }); 
                 routes.MapRoute("log", "log", new { controller = "Login", action = "Login" }); //Register
                 routes.MapRoute("logg", "logg", new { controller = "Login", action = "ReallyLogin" }); //Login
+
+                routes.MapRoute("addProduct", "add-product", new { controller = "AddProduct", action = "Index" }); //Add Product
+                routes.MapRoute("Product", "product", new { controller = "AddProduct", action = "AddProduct" }); //Add Product
+                routes.MapRoute("DeleteProduct", "deleteProduct", new { controller = "AddProduct", action = "DeleteProduct" }); //Add Product
+
+
+                routes.MapRoute("Basket", "basket", new { controller = "Basket", action = "Index" }); //Add Product
+                routes.MapRoute("BasketAdd", "add-basket", new { controller = "Basket", action = "AddBasket" }); //Add Product
+
+                routes.MapRoute("LogOut", "exit", new { controller = "LogOut", action = "LogOut" }); //Add Product
+
+
+
             });
 
         }

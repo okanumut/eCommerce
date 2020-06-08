@@ -3,35 +3,39 @@
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<style>
+    .multipleChosen, .multipleSelect2 {
+        width: 300px;
+    }
+</style>
+<div class="login_left">
+    <div class="loginlogo"></div>
+    <div class="question1 ha" style="margin-top:5px;">Members</div>
+    <div class="question2 ha" style="margin-top:5px;">Login</div>
+    <div class="login_text">Lorem Ipsum is simply dummy text of the printing and <b>typesetting</b> industry. Lorem Ipsum has.</div>
 
-    <div class="login_left">
-        <div class="loginlogo"></div>
-        <div class="question1 ha" style="margin-top:5px;">Members</div>
-        <div class="question2 ha" style="margin-top:5px;">Login</div>
-        <div class="login_text">Lorem Ipsum is simply dummy text of the printing and <b>typesetting</b> industry. Lorem Ipsum has.</div>
-
-        <div>
-            <input type="text" id="UserNameLog" value="Username" onfocus="if(this.value=='Username')this.value=''" onblur="if(this.value=='')this.value='Username'" class="login_name" />
-            <br />
-            <input type="text" id="PasswordLog" value="******" onfocus="if(this.value=='******')this.value=''" onblur="if(this.value=='')this.value='******'" class="login_password" />
-            <input value="Go »" id="btnLogin" class="go" type="submit" />
-        </div>
-
-        
-
-        <div style="clear:both;"></div>
-        <div class="italicblue"><span id="span" style="color: red;font-size: large;"></span></div>
+    <div>
+        <input type="text" id="UserNameLog" value="Username" onfocus="if(this.value=='Username')this.value=''" onblur="if(this.value=='')this.value='Username'" class="login_name" />
         <br />
-        <br />
-        <br />
-
-        <div style="clear:both;"></div>
-        <div class="hbar">-</div>
-        <div class="italicblue"><a href="#">Forgot Password?</a></div>
-        <div style="clear:both;"></div>
-        <div class="hbar">-</div>
-        <div class="italicblue"><a href="#">Forgot Username?</a></div>
+        <input type="text" id="PasswordLog" value="******" onfocus="if(this.value=='******')this.value=''" onblur="if(this.value=='')this.value='******'" class="login_password" />
+        <input value="Go »" id="btnLogin" class="go" type="submit" />
     </div>
+
+
+
+    <div style="clear:both;"></div>
+    <div class="italicblue"><span id="span" style="color: red;font-size: large;"></span></div>
+    <br />
+    <br />
+    <br />
+
+    <div style="clear:both;"></div>
+    <div class="hbar">-</div>
+    <div class="italicblue"><a href="#">Forgot Password?</a></div>
+    <div style="clear:both;"></div>
+    <div class="hbar">-</div>
+    <div class="italicblue"><a href="#">Forgot Username?</a></div>
+</div>
 
 
 
@@ -40,7 +44,7 @@
     <div class="registerlogo"></div>
     <div class="question1 ha" style="margin-top:5px;">Kayıt Ol</div>
     <div class="question2 ha" style="margin-top:5px;">Şimdi</div>
- 
+
     <div>
         <input type="text" id="UserName" value="Username" onfocus="if(this.value=='Username')this.value=''" onblur="if(this.value=='')this.value='Username'" class="register_name" />
         <br />
@@ -48,7 +52,9 @@
         <br />
         <input type="text" id="Email" value="Em@il" onfocus="if(this.value=='Em@il')this.value=''" onblur="if(this.value=='')this.value='Em@il'" class="register_password" />
         <br />
+      
         <input value="Register" id="btnRegister" class="register_account" type="submit" />
+
     </div>
 
 
@@ -64,23 +70,24 @@
             var data = {
                 "UserName": $("#UserName").val(),
                 "Password": $("#Password").val(),
-                "Email": $("#Email").val()
+                "Email": $("#Email").val(),
+                "UserType": "2",
             };
 
-            Util.Ajax.Generic("log",data,"POST","json",false,null,success,null,null);
+            Util.Ajax.Generic("log", data, "POST", "json", false, null, success, null, null);
 
-         
+
 
             function success(status) {
                 var asd = 0;
             }
-        
+
         });
     </script>
 
     <script>
         $("#btnLogin").click(function () {
- 
+
             var data = {
                 "UserNameLog": $("#UserNameLog").val(),
                 "PasswordLog": $("#PasswordLog").val()
